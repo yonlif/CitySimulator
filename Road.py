@@ -21,10 +21,7 @@ class Road(Drawable):
 
     def draw(self, ax: Axes):
         for first_loc, second_loc in zip(self.locations, self.locations[1:]):
-            ax.plot([first_loc.lat, second_loc.lat], [first_loc.lon, second_loc.lon])
-
-    def plot(self):
-        print("Warning: Road is not plot-able")
+            ax.plot([first_loc.lat, second_loc.lat], [first_loc.lon, second_loc.lon], c='blue')
 
     def __repr__(self) -> str:
         return "Road " + " ".join([str(loc) for loc in self.locations])
